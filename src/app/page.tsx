@@ -93,10 +93,10 @@ export default function Home() {
         <div className="flex items-center space-x-8">
           <a href="#" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">首頁</a>
           <div className="relative group">
-            <a href="/game-content" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">遊戲內容</a>
+            <a href="#" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">遊戲內容</a>
           </div>
           <div className="relative group">
-            <a href="/more" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">更多</a>
+            <a href="#" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">更多</a>
           </div>
         </div>
 
@@ -292,6 +292,15 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Admin Access */}
+      <div className="fixed bottom-4 right-4">
+        <a
+          href="/admin"
+          className="bg-[#d4af37] hover:bg-[#ffd700] text-[#1a1612] px-4 py-2 rounded-full font-medium transition-colors shadow-lg"
+        >
+          後台管理
+        </a>
+      </div>
 
       {/* Footer */}
       <footer className="bg-black/40 py-8 mt-16">

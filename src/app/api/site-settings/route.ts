@@ -6,7 +6,6 @@ export async function GET() {
     const settings = await prisma.siteSettings.findFirst({
       where: { id: 'default' }
     })
-
     return NextResponse.json(settings)
   } catch (error) {
     console.error('Error fetching site settings:', error)
@@ -17,13 +16,11 @@ export async function GET() {
 export async function PUT(request: Request) {
   try {
     const data = await request.json()
-
     const settings = await prisma.siteSettings.upsert({
       where: { id: 'default' },
       update: data,
       create: { id: 'default', ...data }
     })
-
     return NextResponse.json(settings)
   } catch (error) {
     console.error('Error updating site settings:', error)
