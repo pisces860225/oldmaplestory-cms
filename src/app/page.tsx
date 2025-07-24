@@ -93,10 +93,10 @@ export default function Home() {
         <div className="flex items-center space-x-8">
           <a href="#" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">首頁</a>
           <div className="relative group">
-            <a href="#" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">遊戲內容</a>
+            <a href="/game-content" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">遊戲內容</a>
           </div>
           <div className="relative group">
-            <a href="#" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">更多</a>
+            <a href="/more" className="text-[#d4af37] hover:text-[#ffd700] transition-colors">更多</a>
           </div>
         </div>
 
