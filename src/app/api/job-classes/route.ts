@@ -7,7 +7,6 @@ export async function GET() {
       where: { isActive: true },
       orderBy: { order: 'asc' }
     })
-
     return NextResponse.json(jobClasses)
   } catch (error) {
     console.error('Error fetching job classes:', error)
@@ -18,11 +17,9 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-
     const jobClass = await prisma.jobClass.create({
       data
     })
-
     return NextResponse.json(jobClass)
   } catch (error) {
     console.error('Error creating job class:', error)
