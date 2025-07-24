@@ -21,19 +21,19 @@ model User {
 }
 
 model NavigationItem {
-  id        String           @id @default(cuid())
-  label     String
-  href      String
-  parentId  String?
-  order     Int              @default(0)
-  createdAt DateTime         @default(now())
-  updatedAt DateTime         @updatedAt
-  parent    NavigationItem?  @relation("NavigationHierarchy", fields: [parentId], references: [id])
-  children  NavigationItem[] @relation("NavigationHierarchy")
+  id       String  @id @default(cuid())
+  label    String
+  href     String
+  parentId String?
+  order    Int     @default(0)
+  parent   NavigationItem? @relation("NavigationHierarchy", fields: [parentId], references: [id])
+  children NavigationItem[] @relation("NavigationHierarchy")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model SiteSettings {
-  id                 String   @id @default(cuid())
+  id                 String @id @default(cuid())
   siteLogo           String
   siteTitle          String
   heroTitle          String
@@ -46,8 +46,8 @@ model SiteSettings {
   socialFacebook     String?
   socialTwitter      String?
   backgroundImage    String?
-  createdAt          DateTime @default(now())
-  updatedAt          DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model GameFeature {
@@ -73,7 +73,7 @@ model JobClass {
   name        String
   icon        String
   description String
-  category    String
+  category    String   // adventurer, knights, hero
   image       String?
   order       Int      @default(0)
   isActive    Boolean  @default(true)
@@ -125,24 +125,24 @@ model HistoricalMoment {
 }
 
 model NewsPost {
-  id          String    @id @default(cuid())
+  id          String   @id @default(cuid())
   title       String
   content     String
   excerpt     String?
   image       String?
-  isPublished Boolean   @default(false)
+  isPublished Boolean  @default(false)
   publishedAt DateTime?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model MediaAsset {
-  id           String   @id @default(cuid())
-  filename     String
+  id        String   @id @default(cuid())
+  filename  String
   originalName String
-  mimeType     String
-  size         Int
-  url          String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  mimeType  String
+  size      Int
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
