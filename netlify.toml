@@ -2,12 +2,12 @@
   remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
 
 [build]
-  command = "bunx prisma generate && bunx prisma migrate deploy && bun run db:seed && bun run build"
+  command = "bunx prisma generate && bunx prisma db push --force-reset && bun run db:seed && bun run build"
   publish = ".next"
 
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
-  DATABASE_URL = "file:./dev.db"
+  DATABASE_URL = "file:./production.db"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
