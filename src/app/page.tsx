@@ -292,15 +292,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Admin Access */}
-      <div className="fixed bottom-4 right-4">
-        <a
-          href="/admin"
-          className="bg-[#d4af37] hover:bg-[#ffd700] text-[#1a1612] px-4 py-2 rounded-full font-medium transition-colors shadow-lg"
-        >
-          後台管理
-        </a>
-      </div>
 
       {/* Footer */}
       <footer className="bg-black/40 py-8 mt-16">
